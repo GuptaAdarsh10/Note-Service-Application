@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: device-notes-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/device_db
+    username: device_user
+    password: device_pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    defer-datasource-initialization: true
+    open-in-view: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+logging:
+  level:
+    liquibase: DEBUG

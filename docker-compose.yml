@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: device-postgres
+    environment:
+      POSTGRES_DB: device_db
+      POSTGRES_USER: device_user
+      POSTGRES_PASSWORD: device_pass
+      TZ: Asia/Kolkata
+    ports:
+      - "5432:5432"
